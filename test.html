@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For You ❤️</title>
+
+  <!-- Pretty fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#fff1f5;
+      --bg2:#f5f3ff;
+      --card:#ffffffcc;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --accent:#db2777;
+      --shadow: 0 20px 60px rgba(31,41,55,.18);
+    }
+
+    * { box-sizing: border-box; }
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      color:var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, var(--bg1), transparent 60%),
+        radial-gradient(900px 600px at 85% 85%, var(--bg2), transparent 60%),
+        linear-gradient(135deg, #fff7ed, #fdf2f8);
+    }
+
+    .card{
+      width:min(860px, 100%);
+      background:var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 4vw, 42px);
+      position:relative;
+      overflow:hidden;
+      transform: translateY(6px);
+      animation: floatIn .8s ease-out forwards;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(circle at 15% 20%, rgba(219,39,119,.20), transparent 40%),
+                  radial-gradient(circle at 90% 85%, rgba(124,58,237,.18), transparent 45%);
+      pointer-events:none;
+    }
+
+    @keyframes floatIn{
+      from { opacity:0; transform: translateY(18px) scale(.99); }
+      to   { opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    .top{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      position:relative;
+    }
+
+    .title{
+      margin:0;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 0.95;
+      color: var(--accent);
+      letter-spacing: .5px;
+      text-shadow: 0 10px 30px rgba(219,39,119,.18);
+    }
+
+    .subtitle{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: clamp(14px, 1.7vw, 16px);
+    }
+
+    .badge{
+      border: 1px solid rgba(219,39,119,.25);
+      color: rgba(219,39,119,.95);
+      background: rgba(255,255,255,.6);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      align-self:flex-start;
+      position:relative;
+    }
+
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(219,39,119,.35), rgba(124,58,237,.25), transparent);
+      margin: 22px 0;
+      position:relative;
+    }
+
+    .message{
+      position:relative;
+      font-size: clamp(16px, 1.9vw, 18px);
+      line-height: 1.75;
+      letter-spacing: .1px;
+    }
+
+    .message p{ margin: 0 0 14px; }
+    .message p:last-child{ margin-bottom: 0; }
+
+    .signature{
+      margin-top: 22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items: baseline;
+      position:relative;
+    }
+
+    .sig-label{
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .sig-name{
+      font-family: "Great Vibes", cursive;
+      font-size: 44px;
+      color: var(--ink);
+      margin-left: 8px;
+    }
+
+    .hearts{
+      position:absolute;
+      right: 18px;
+      bottom: 16px;
+      opacity:.22;
+      font-size: 52px;
+      transform: rotate(-8deg);
+      user-select:none;
+    }
+
+    /* Small screens */
+    @media (max-width: 560px){
+      .top{ flex-direction: column; }
+      .badge{ align-self:flex-start; }
+      .hearts{ font-size: 46px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" role="article" aria-label="A message">
+    <div class="top">
+      <div>
+        <h1 class="title">For You</h1>
+        <p class="subtitle">A little note, just because you deserve it.</p>
+      </div>
+      <div class="badge">Made with love</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Replace the text below with YOUR message -->
+    <section class="message">
+      <p>Hey love,</p>
+      <p>
+        (Paste your message here.)  
+        You can write multiple paragraphs by adding more <code>&lt;p&gt;...&lt;/p&gt;</code> lines.
+      </p>
+      <p>
+        I just wanted you to know you mean a lot to me — more than I can fit into words.
+      </p>
+    </section>
+
+    <div class="signature">
+      <span class="sig-label">With all my heart,</span>
+      <span class="sig-name">Mark</span>
+    </div>
+
+    <div class="hearts" aria-hidden="true">❤︎</div>
+  </main>
+</body>
+</html>
